@@ -20,7 +20,7 @@ class Form extends React.Component {
     return (
       <form>
         <label htmlFor="name">
-          nome:
+          Nome:
           <input
             name="cardName"
             value={ cardName }

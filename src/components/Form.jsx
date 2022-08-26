@@ -20,7 +20,7 @@ class Form extends React.Component {
     return (
       <form>
         <label htmlFor="name">
-          Nome:
+          Name:
           <input
             name="cardName"
             value={ cardName }
@@ -42,7 +42,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atrib">
-          número:
+          Attr01:
           <input
             name="cardAttr1"
             value={ cardAttr1 }
@@ -53,7 +53,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atrib1">
-          número:
+          Attr02:
           <input
             name="cardAttr2"
             value={ cardAttr2 }
@@ -64,7 +64,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atrib2">
-          número:
+          Attr03:
           <input
             name="cardAttr3"
             value={ cardAttr3 }
@@ -75,6 +75,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="atrib3">
+          Imagem:
           <input
             name="cardImage"
             value={ cardImage }
@@ -110,12 +111,22 @@ class Form extends React.Component {
         <label htmlFor="atrib6">
           <input
             name="isSaveButtonDisabled"
-            disabled={ isSaveButtonDisabled }
-            onClick={ onSaveButtonClick }
             type="button"
             data-testid="save-button"
-            value="Salvar"
+            disabled={ isSaveButtonDisabled }
+            onClick={ () => onSaveButtonClick({
+              cardName,
+              cardDescription,
+              cardAttr1,
+              cardAttr2,
+              cardAttr3,
+              cardImage,
+              cardRare,
+              cardTrunfo,
+            }) }
+
           />
+          Salvar
         </label>
       </form>
     );

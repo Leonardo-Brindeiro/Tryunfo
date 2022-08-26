@@ -10,9 +10,26 @@ class App extends React.Component {
     cardAttr2: 0,
     cardAttr3: 0,
     cardImage: '',
-    cardRare: '',
+    cardRare: 'normal',
     cardTrunfo: false,
     isSaveButtonDisabled: true,
+    data: [],
+  };
+
+  SaveButton = (infoObjetc) => {
+    this.setState((prevState) => ({
+      data: [...prevState.data, infoObjetc],
+    }));
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardImage: '',
+      cardRare: 'normal',
+
+    });
   };
 
   onInputChange = ({ target }) => {
@@ -30,6 +47,7 @@ class App extends React.Component {
         cardAttr2,
         cardAttr3,
         cardRare,
+
       } = this.state;
       const soma = Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3);
       const total = 210;
@@ -63,6 +81,7 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       isSaveButtonDisabled,
+
     } = this.state;
     return (
       <div>
@@ -78,6 +97,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.SaveButton }
         />
         <Card
           cardName={ cardName }

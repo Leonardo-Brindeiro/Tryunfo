@@ -29,19 +29,18 @@ class App extends React.Component {
       cardAttr3: 0,
       cardImage: '',
       cardRare: 'normal',
-      hasTrunfo: true,
-
-    }));
+    }), this.trunfoPage);
   };
 
-  // trunfoPage = () => {
-  //   const { cardTrunfo } = this.state;
-  //   if (cardTrunfo === true) {
-  //     this.setState({
-  //       hasTrunfo: true,
-  //     });
-  //   }
-  // };
+  trunfoPage = () => {
+    const { cardTrunfo } = this.state;
+    if (cardTrunfo === true) {
+      this.setState({
+        hasTrunfo: true,
+        cardTrunfo: false,
+      });
+    }
+  };
 
   onInputChange = ({ target }) => {
     const { name, type } = target;
@@ -111,7 +110,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.SaveButton }
-          hastrunfo={ hasTrunfo }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }

@@ -10,8 +10,9 @@ class App extends React.Component {
     cardAttr2: 0,
     cardAttr3: 0,
     cardImage: '',
+    cardTrunfo: 'false',
     cardRare: 'normal',
-    cardTrunfo: false,
+    hasTrunfo: false,
     isSaveButtonDisabled: true,
     data: [],
   };
@@ -20,7 +21,7 @@ class App extends React.Component {
     this.setState((prevState) => ({
       data: [...prevState.data, infoObjetc],
     }));
-    this.setState({
+    this.setState(({
       cardName: '',
       cardDescription: '',
       cardAttr1: 0,
@@ -28,9 +29,19 @@ class App extends React.Component {
       cardAttr3: 0,
       cardImage: '',
       cardRare: 'normal',
+      hasTrunfo: true,
 
-    });
+    }));
   };
+
+  // trunfoPage = () => {
+  //   const { cardTrunfo } = this.state;
+  //   if (cardTrunfo === true) {
+  //     this.setState({
+  //       hasTrunfo: true,
+  //     });
+  //   }
+  // };
 
   onInputChange = ({ target }) => {
     const { name, type } = target;
@@ -81,6 +92,8 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
       isSaveButtonDisabled,
+      hasTrunfo,
+      data,
 
     } = this.state;
     return (
@@ -98,6 +111,7 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.SaveButton }
+          hastrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }
@@ -110,6 +124,15 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
         />
+        {data.map((infoObjetc) => (<Card
+          key={ infoObjetc.cardName }
+          cardName={ infoObjetc.cardName }
+          cardDescription={ infoObjetc.cardDescription }
+          cardImage={ infoObjetc.cardImage }
+          cardAttr1={ infoObjetc.cardAttr1 }
+          cardAttr2={ infoObjetc.cardAttr2 }
+          cardAttr3={ infoObjetc.cardAttr3 }
+        />))}
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 
-class App extends React.Component {
+class App extends React.Component { // Ajuda da mentoria e amigos
   state = {
     cardName: '',
     cardDescription: '',
@@ -17,7 +17,7 @@ class App extends React.Component {
     data: [],
   };
 
-  SaveButton = (infoObjetc) => {
+  SaveButton = (infoObjetc) => { // Ajuda da cris e andré da mentoria
     this.setState((prevState) => ({
       data: [...prevState.data, infoObjetc],
     }));

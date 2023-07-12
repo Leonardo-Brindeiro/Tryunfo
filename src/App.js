@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 
-class App extends React.Component { // Ajuda da mentoria e amigos
+class App extends React.Component { // Ajuda da mentoria
   state = {
     cardName: '',
     cardDescription: '',
@@ -17,7 +17,7 @@ class App extends React.Component { // Ajuda da mentoria e amigos
     data: [],
   };
 
-  SaveButton = (infoObjetc) => { // Ajuda da cris e andré da mentoria
+  SaveButton = (infoObjetc) => { // Ajuda da cris e andré  da mentoria
     this.setState((prevState) => ({
       data: [...prevState.data, infoObjetc],
     }));
@@ -99,38 +99,38 @@ class App extends React.Component { // Ajuda da mentoria e amigos
       <div>
         <h1>Tryunfo</h1>
         <Form
-          onInputChange={ this.onInputChange }
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ this.SaveButton }
-          hasTrunfo={ hasTrunfo }
+          onInputChange={this.onInputChange}
+          cardName={cardName}
+          cardDescription={cardDescription}
+          cardAttr1={cardAttr1}
+          cardAttr2={cardAttr2}
+          cardAttr3={cardAttr3}
+          cardImage={cardImage}
+          cardRare={cardRare}
+          cardTrunfo={cardTrunfo}
+          isSaveButtonDisabled={isSaveButtonDisabled}
+          onSaveButtonClick={this.SaveButton}
+          hasTrunfo={hasTrunfo}
         />
         <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
+          cardName={cardName}
+          cardDescription={cardDescription}
+          cardAttr1={cardAttr1}
+          cardAttr2={cardAttr2}
+          cardAttr3={cardAttr3}
+          cardImage={cardImage}
+          cardRare={cardRare}
+          cardTrunfo={cardTrunfo}
+          isSaveButtonDisabled={isSaveButtonDisabled}
         />
         {data.map((infoObjetc) => (<Card
-          key={ infoObjetc.cardName }
-          cardName={ infoObjetc.cardName }
-          cardDescription={ infoObjetc.cardDescription }
-          cardImage={ infoObjetc.cardImage }
-          cardAttr1={ infoObjetc.cardAttr1 }
-          cardAttr2={ infoObjetc.cardAttr2 }
-          cardAttr3={ infoObjetc.cardAttr3 }
+          key={infoObjetc.cardName}
+          cardName={infoObjetc.cardName}
+          cardDescription={infoObjetc.cardDescription}
+          cardImage={infoObjetc.cardImage}
+          cardAttr1={infoObjetc.cardAttr1}
+          cardAttr2={infoObjetc.cardAttr2}
+          cardAttr3={infoObjetc.cardAttr3}
         />))}
       </div>
     );

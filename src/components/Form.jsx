@@ -16,7 +16,7 @@ class Form extends React.Component {
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
-    } = this.props;
+    } = this.props; // essas são as minhas propriedades
     return (
       <form>
         <label htmlFor="name">
@@ -60,7 +60,7 @@ class Form extends React.Component {
             onChange={ onInputChange }
             id="atrib1"
             data-testid="attr2-input"
-            type="number"
+            type="text"
           />
         </label>
         <label htmlFor="atrib2">
